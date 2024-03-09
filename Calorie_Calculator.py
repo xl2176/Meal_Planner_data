@@ -70,7 +70,8 @@ def calculate_carbohydrates(data):
     for item in data:
         total_carb += item.get("carbohydrate", 0)
     return total_carb
-
+    
+#For testing only
 def main():
     '''
     1. Get input 'recipe': which should be a list
