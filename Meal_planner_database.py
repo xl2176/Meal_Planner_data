@@ -59,18 +59,32 @@ def add_intake():
     '''
     this create an daily intake for a user.
     '''
-# Update user intake table
-sql = "UPDATE daily_intake SET total_calories = %s, total_carbs = %s WHERE userID = %s AND date = %s"
-values = (calories, carbs, userID, date)
+    # Create cursor
+    mycursor = mydb.cursor()
+    userID = id
+    for userID in userIDs:
+        create_user_table(userID)
+    # Commit changes to the database
+    mydb.commit()
+    # Close the connection
+    mydb.close()
 
-mycursor.execute(sql, values)
+def create_user_table(userID):
+    '''
+    This function create a new daily intake table for each user by their userID
+    '''
+    table_name = "user_" + str(userID)
+    # Execute SQL query to create table
+    sql = f"""CREATE TABLE IF NOT EXISTS {table_name} (
+                intakeID INT AUTO_INCREMENT PRIMARY KEY,
+                date DATE,
+                total_calories FLOAT,
+                total_carbs FLOAT,
+                -- Add other relevant fields for daily intake tracking
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )"""
+    mycursor.execute(sql)
 
-
-# Commit changes to the database
-mydb.commit()
-
-# Close the connection
-mydb.close()
 
 
 
