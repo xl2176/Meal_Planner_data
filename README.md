@@ -1,6 +1,6 @@
 ## Welcome to NutroVision: Your Insightful Guide to Nutritious Eating 
 
-_In this repository, please ignore the Meal_panner_databse.py file_
+_In this repository, we didn't endup using any of the codes form the Meal_panner_databse.py, User_data_input.py, DatbaseOps.py, and file_
 Discover Recipes, Uncover Nutrients, and Track Calories Seamlessly
 
 Transform Your Ingredients into Nutritional Insights NutroVision is revolutionizing the way you cook and track your nutrition. With our innovative app, you can turn a simple image of ingredients into a detailed culinary adventure, complete with calorie counts and nutritious recipes.
